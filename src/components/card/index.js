@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'space-between',
     elevation: 20,
-    marginRight:1
+    marginRight:13
   },
   imgs: {
     alignItems: 'center'
