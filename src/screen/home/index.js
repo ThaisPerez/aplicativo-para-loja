@@ -3,13 +3,13 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-nati
 import Cards from './../../components/card';
 import Header from './../../components/header';
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
     < ScrollView style={styles.container}>
       <Header></Header>
       <Text style={styles.titulo}>Mais Vendidos</Text>
       <ScrollView horizontal style={styles.cards}>
-        <Cards titulo='Controle Ps4' img={require('./../../components/card/image/produto1.png')} avaliacao={5} preco={'200,00'} />
+        <Cards navigation={() => navigation.navigate('Detalhe')} titulo='Controle Ps4' img={require('./../../components/card/image/produto1.png')} avaliacao={5} preco={'200,00'} />
         <Cards titulo='Iphone 14 Pro Max' img={require('./../../components/card/image/produto4.png')} avaliacao={5} preco={'80,00'} />
         <Cards titulo='Fone de Ouvido sem Fio' img={require('./../../components/card/image/produto2.png')} avaliacao={5} preco={'200,00'} />
       </ScrollView>
@@ -39,9 +39,9 @@ export default function Home() {
           <Cards titulo='Controle Ps4' img={require('./../../components/card/image/produto7.png')} avaliacao={5} preco={'200,00'} />
           <Cards titulo='Fone de Ouvido sem Fio' img={require('./../../components/card/image/produto2.png')} avaliacao={5} preco={'80,00'} />
           <Cards titulo='PlayStation 5' img={require('./../../components/card/image/produto6.png')} avaliacao={5} preco={'200,00'} />
-          <Cards titulo='Smart Tv' img={require('./../../components/card/image/produto5.png')} avaliacao={5} preco={'200,00'} />
-          <Cards titulo='Fritadeira Elétrica' img={require('./../../components/card/image/produto7.png')} avaliacao={5} preco={'200,00'} />
           <Cards titulo='Notebook' img={require('./../../components/card/image/produto5.png')} avaliacao={5} preco={'200,00'} />
+          <Cards titulo='Fritadeira Elétrica' img={require('./../../components/card/image/produto7.png')} avaliacao={5} preco={'200,00'} />
+          <Cards titulo='Notebooks' img={require('./../../components/card/image/produto5.png')} avaliacao={5} preco={'200,00'} />
         </View>
       </ScrollView>
     </ ScrollView>

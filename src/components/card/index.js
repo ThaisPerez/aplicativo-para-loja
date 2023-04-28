@@ -27,7 +27,7 @@ export default function Cards(props) {
         <TouchableOpacity>
           <Image source={require('./image/amei.png')} />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={props.navigation}>
           <Image source={require('./image/mais.png')} />
         </TouchableOpacity>
       </View>

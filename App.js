@@ -4,17 +4,28 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './src/screen/home';
 import Detalhe from './src/screen/detalhe';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
+function NavigationHome() {
+  return (
+    <Stack.Navigator initialRouteName='Detalhe' screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Detalhe" component={Detalhe} />
+      </Stack.Navigator>
+  );
+}
 function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={{
-        tabBarActiveTintColor: '#7762FF'        
+        tabBarActiveTintColor: '#7762FF',
+        headerShown: false     
         
       }}>
-        <Tab.Screen name="Página Inicial " component={Home} options={{
+        <Tab.Screen name="Página Inicial " component={NavigationHome} options={{
           tabBarLabel: 'Início',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
