@@ -11,21 +11,12 @@ const Stack = createNativeStackNavigator();
 
 function NavigationHome() {
   return (
-    <Stack.Navigator initialRouteName='Detalhe' screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Detalhe" component={Detalhe} />
-      </Stack.Navigator>
-  );
-}
-function App() {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator screenOptions={{
+    <Tab.Navigator screenOptions={{
         tabBarActiveTintColor: '#7762FF',
         headerShown: false     
         
       }}>
-        <Tab.Screen name="Página Inicial " component={NavigationHome} options={{
+        <Tab.Screen name="Página Inicial " component={Home} options={{
           tabBarLabel: 'Início',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -55,11 +46,17 @@ function App() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
-        }} /> 
-        
-        
-        
+        }} />            
       </Tab.Navigator>
+   );
+}
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home' screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={NavigationHome} />
+        <Stack.Screen name="Detalhe" component={Detalhe} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

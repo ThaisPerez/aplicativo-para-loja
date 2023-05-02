@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     justifyContent: 'center',
     alignItems: "center",
-    marginRight: 15,
+    marginRight: 10,
     marginBottom: 2
 
   },
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
-    marginTop: 15
+    marginTop: 10
   },
   cards: {
     height: 200
